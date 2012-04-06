@@ -1,6 +1,6 @@
 "Mise en place de la syntaxe
 "Load pathogen
-"call pathogen#infect()
+call pathogen#infect()
 
 "
 " pas compitable avec vi
@@ -38,7 +38,7 @@ set history=500
 
 "" backup
 set backup
-set backupdir=~/.vim/tmp
+set backupdir=~/tmp/
 set bex=.bak
 
 
@@ -286,7 +286,7 @@ endif
 
 set magic
 
-let vimtdir=$HOME . '/.vim/tmp'
+let vimtdir=$HOME . '/tmp'
 let &viminfo="'20," . '%,n' . vimtdir . '/.viminfo'
 
 "------------------------------------------------------------------------------
@@ -309,3 +309,13 @@ nnoremap Y y$
 " " Force Saving Files that Require Root Permission
 cmap w!! %!sudo tee > /dev/null %
 
+
+"maximize vim at startup 
+"http://ubuntuguide.net/get-gvim-start-in-maximized-window-in-ubuntu-gnome
+function Maximize_Window()
+  silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+endfunction
+
+if &loadplugins
+  source $HOME/.vim/vimrc_plugins
+endif
