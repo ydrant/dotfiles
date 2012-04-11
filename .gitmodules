@@ -19,3 +19,6 @@
 [submodule "vim/bundle/comments"]
 	path = vim/bundle/comments
 	url = git://github.com/vim-scripts/comments.vim.git
+[submodule "deps/pyflakes"]
+	path = deps/pyflakes
+	url = git://github.com/kevinw/pyflakes.git
