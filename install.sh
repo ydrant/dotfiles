@@ -1,6 +1,6 @@
 #!/bin/sh
 
-(cd deps/pyflakes && sudo python setup.py install)
+sudo pip install pyflakes
 
 ln -s ${PWD}/vim ~/.vim
 ln -s ${PWD}/vim/vimrc ~/.vimrc
