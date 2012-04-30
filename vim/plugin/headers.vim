@@ -4,11 +4,17 @@ if exists("loaded_headers_plugin") || exists("g:headers_stop") || &cp
 endif
 
 if !exists('g_headers_authors')
-  let g:g_headers_authors = "John Do"
+  let g:g_headers_authors = $GIT_COMMITTER_NAME
+  if g:g_headers_authors == ""
+    let g:g_headers_authors = "John Do"
+  endif
 endif
 
 if !exists('g_header_email_author')
-  let g:g_header_email_author = "jd@none.com"
+  let g:g_header_email_author = $GIT_COMMITTER_EMAIL
+  if  g:g_header_email_author == ""
+    let g:g_header_email_author = "jd@none.com"
+  endif
 endif
 
 if !exists('g_header_copyright')
