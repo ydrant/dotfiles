@@ -38,13 +38,14 @@ set history=500
 
 "" backup
 set backup
-set backupdir=~/tmp/
+set backupdir=~/tmp/vim
 set bex=.bak
 
 
 let maplocalleader = "!"
 
 "" GUI
+set background=dark
 " Le choix des couleurs
 if has('gui_running')
   " choix du theme 
@@ -90,7 +91,6 @@ else
   " sans gui
   set t_Co=256
   "colorscheme xoria256
-  set background=dark
 endif
 
 if &t_Co == 256
