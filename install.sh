@@ -26,8 +26,15 @@ else
   ln -s ${PWD}/vim/vimrc ~/.vimrc
 fi
 
+echo "********** GIT **********"
+if [ -e ~/.gitconfig ]; then 
+  echo "~/.gitconfig already exists"
+else
+  echo "~/.gitconfig creating"
+  ln -s ${PWD}/git/gitconfig ~/.gitconfig
+fi
 
-echo "********** VIM **********"
+echo "********** ZSH **********"
 if [ -e ~/.zsh ]; then 
   echo "~/.zsh already exists"
 else
