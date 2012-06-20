@@ -11,3 +11,8 @@ mkdir -p ~/tmp/vim
 ln -s ${PWD}/vim ~/.vim
 ln -s ${PWD}/vim/vimrc ~/.vimrc
 
+ln -s ${PWD}/bin ~/bin
+
+ln -s ${PWD}/zsh ~/.zsh
+ln -s ${PWD}/zsh/zshrc ~/.zshrc
+

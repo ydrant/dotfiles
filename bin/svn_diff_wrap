@@ -1,0 +1,35 @@
+#!/bin/sh
+###
+#   \file svn_diff_wrap.sh
+#  
+#  ============================================================================
+#   Created  on : 19 Apr 2011 13:23:50 by yannick on dev101
+#   Last update : 19 Apr 2011 13:23:50 by yannick on dev101
+#  
+#   Description:
+#     found @ http://blog.tplus1.com/index.php/2007/08/29/how-to-use-vimdiff-as-the-subversion-diff-tool/
+###
+#
+# Then change your $HOME/.subversion/config file to point at that script:
+#   [helpers]
+#   diff-cmd = /home/matt/bin/diffwrap.sh
+#
+###
+
+
+# Configure your favorite diff program here.
+DIFF="/usr/bin/vimdiff"
+
+# Subversion provides the paths we need as the sixth and seventh
+# parameters.
+LEFT=${6}
+RIGHT=${7}
+
+# Call the diff command (change the following line to make sense for
+# your merge program).
+$DIFF $LEFT $RIGHT
+
+# Return an errorcode of 0 if no differences were detected, 1 if some were.
+# Any other errorcode will be treated as fatal.
+
+### vim:set et ts=2 sts=2 sw=2 ft=sh: ###

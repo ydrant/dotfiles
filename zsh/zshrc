@@ -1,0 +1,41 @@
+# Path to your oh-my-zsh configuration.
+export TERM="xterm-256color"
+export ZSH=$HOME/.zsh
+
+# Set to the name theme to load.
+export ZSH_THEME="blackwhite"
+
+# Set to this to use case-sensitive completion
+# export CASE_SENSITIVE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# export DISABLE_LS_COLORS="true"
+eval `dircolors ${ZSH}/themes/ls_colors/dircolors.256dark`
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# export DISABLE_AUTO_TITLE="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=()
+
+
+# Customize to your needs...
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:${HOME}/bin
+
+autoload zcalc
+
+EDITOR='vim'
+
+if [ -r $ZSH/zshrc.local ]; then
+  source $ZSH/zshrc.local
+fi
+
+source $ZSH/my-zsh.zsh
+
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session
+
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
