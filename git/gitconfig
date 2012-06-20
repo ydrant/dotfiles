@@ -1,0 +1,46 @@
+[apply]
+  whitespace = nowarn
+
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  w = whatchanged
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[interactive]
+  singlekey = true
+
+
+[diff]
+  renamelimit = 0
+  renames = copies
+
+[color]
+  diff = auto
+  interactive = auto
+  status = auto
+  branch = auto
+  # Allow all Git commands to use colored output, if possible
+  ui = auto
+
+[diff]
+  external = git_diff_wrap
+  # Tell git diff to use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation:
+  mnemonicprefix = true
+[pager]
+  diff =
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[web]
+  browser = chromium
+
+[core]
+  # When branching off a remote branch, automatically let the local branch track the remote branch:
+  whitespace = trailing-space,space-before-tab
+	excludesfile = ~/.gitignore
+
