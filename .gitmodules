@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-indexed-search"]
 	path = vim/bundle/vim-indexed-search
 	url = git://github.com/henrik/vim-indexed-search.git
+[submodule "deps/gnome-terminal-colors-solarized"]
+	path = deps/gnome-terminal-colors-solarized
+	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
