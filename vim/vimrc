@@ -58,10 +58,11 @@ if has('gui_running')
   " au InsertLeave * :colo oceandeep
 
   " choix de la police
-  set guifont=MonoSpace\ 10
+  "set guifont=MonoSpace\ 10
+  set guifont=Ubuntu\ Mono\ for\ Powerline\ 12
 
   " surligne la ligne courrante
-  " set cursorline
+   set cursorline
 
   " affichage des lignes
   set number
