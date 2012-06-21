@@ -19,3 +19,6 @@
 [submodule "vim/bundle/comments"]
 	path = vim/bundle/comments
 	url = git://github.com/vim-scripts/comments.vim.git
+[submodule "vim/bundle/vim-indexed-search"]
+	path = vim/bundle/vim-indexed-search
+	url = git://github.com/henrik/vim-indexed-search.git
