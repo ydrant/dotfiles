@@ -202,6 +202,15 @@ function! Headers_insert_vim()
   call <SID>headers_generate_header(s:first_line, s:comment_begin, s:comment_middle, s:comment_end, s:ft)
 endfunction
 
+function! Headers_insert_lisp()
+  let s:first_line = ""
+  let s:comment_begin  = ';;'
+  let s:comment_middle = ';;'
+  let s:comment_end    = ';;'
+  let s:ft = "lisp"
+  call <SID>headers_generate_header(s:first_line, s:comment_begin, s:comment_middle, s:comment_end, s:ft)
+endfunction
+
 
 autocmd BufNewFile *.c,*.h,*.cpp,*.hpp,*.cxx,*.hxx call Headers_insert_c()
 autocmd BufWritePre *.c,*.h,*.cpp,*.hpp,*.cxx,*.hxx call <SID>headers_update(' * ')
@@ -214,6 +223,9 @@ autocmd BufWritePre *.sh call <SID>headers_update('#  ')
 
 autocmd BufNewFile *.vim call Headers_insert_vim()
 autocmd BufWritePre *.vim call <SID>headers_update('"')
+
+autocmd BufNewFile *.lisp call Headers_insert_lisp()
+autocmd BufWritePre *.lisp call <SID>headers_update(';;')
 
 let loaded_headers_plugin = 1
 
