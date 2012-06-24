@@ -1,8 +1,7 @@
 " Powerline:
 let g:Powerline_symbols = 'fancy'
-let g:Powerline_colorscheme='skwp'
-
-"let g:Powerline_colorscheme='solarized'
+"let g:Powerline_colorscheme='skwp'
+let g:Powerline_colorscheme='solarized'
 
 " CloseTag: Intelligently close HTML tags
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1

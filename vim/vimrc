@@ -1,13 +1,14 @@
 "Mise en place de la syntaxe
+" en cours d'integration
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/#rainbow-parentheses 
+"
+filetype off " see pathogen doc : 
 "Load pathogen
 call pathogen#infect()
 
-"
 " pas compitable avec vi
 set nocompatible
-syntax enable
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 syntax on
 " pratique sur des machine puissance
@@ -25,6 +26,8 @@ set shiftwidth=2
 "set 
 set expandtab
 
+set encoding=utf-8
+set scrolloff=3
 
 """ recherche
 set smartcase           " Do smart case matching
@@ -131,10 +134,18 @@ set showcmd
 set showmode
 " Active le menu pour le menu dans la bar en bas
 set wildmenu
+set wildmode=list:longest
+
+
+set laststatus=2
+set relativenumber
+set undofile
+
+let mapleader = ","
 
 " gestion des fichiers
 "
-filetype plugin indent on
+"filetype plugin indent on
 
 if has("autocmd")
   "
