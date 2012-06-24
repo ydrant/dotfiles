@@ -7,7 +7,7 @@
 
    ============================================================================
     Created  on : 2012-01-17 14:30:20 by yannick on dev101
-    Last update : 2012-02-17 14:51:54+0100
+    Last update : 2012-06-22 10:00:24 by yannick on mars
     Kimian Copyright 2011
 
     Description
@@ -75,28 +75,30 @@ def get_svn_branch_name(res):
 
 def check_svn():
   ret = {}
-  r = exec_cmd(["svn","info"])
-  if r[2] == 0:
-    ret["scm"] = "svn"
-    ret["branche"] = get_svn_branch_name(r[1])
-    r = exec_cmd(["svn","status"])
+  try:
+    r = exec_cmd(["svn","info"])
     if r[2] == 0:
-      for l in r[1]:
-        if l.startswith("? "):
-          ret["untracked"] = True
-        elif l.startswith("A "):
-          ret["added"] = True
-        elif l.startswith("M ") or l.startswith("AM ") or l.startswith(" T "):
-          ret["modified"] = True
-        if l.startswith("R  "):
-          ret["renamed"] = True
-        if l.startswith("D "):
-          ret["deleted"] = True
-        if l.startswith("UU "):
-          ret["unmerged"] = True
-    return ret
+      ret["scm"] = "svn"
+      ret["branche"] = get_svn_branch_name(r[1])
+      r = exec_cmd(["svn","status"])
+      if r[2] == 0:
+        for l in r[1]:
+          if l.startswith("? "):
+            ret["untracked"] = True
+          elif l.startswith("A "):
+            ret["added"] = True
+          elif l.startswith("M ") or l.startswith("AM ") or l.startswith(" T "):
+            ret["modified"] = True
+          if l.startswith("R  "):
+            ret["renamed"] = True
+          if l.startswith("D "):
+            ret["deleted"] = True
+          if l.startswith("UU "):
+            ret["unmerged"] = True
+      return ret
+  except:
+    return None
   return None
-
 
 def display_state(state, idx_col):
   result = color["header"][idx_col]% (state)
