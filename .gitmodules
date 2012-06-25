@@ -25,3 +25,6 @@
 [submodule "deps/gnome-terminal-colors-solarized"]
 	path = deps/gnome-terminal-colors-solarized
 	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+[submodule "vim/bundle/rainbow_parentheses"]
+	path = vim/bundle/rainbow_parentheses
+	url = git://github.com/kien/rainbow_parentheses.vim.git
