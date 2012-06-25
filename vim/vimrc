@@ -43,6 +43,8 @@ set history=500
 set backup
 set backupdir=~/tmp/vim
 set bex=.bak
+set directory=~/tmp/vim   " swap files
+set noswapfile            " It's 2012, Vim.
 
 
 let maplocalleader = "!"
@@ -84,8 +86,7 @@ if has('gui_running')
   " tab : tabulations
   " trail : espace en fin de ligne
   " set list listchars=tab:>-,eol:¶
-  set list listchars=tab:>-,eol:¶,extends:>,precedes:<,trail:-
-
+  set list listchars=tab:▸\ ,eol:¶,extends:>,precedes:<,trail:-
   set foldmethod=syntax
   set foldenable
   set foldcolumn=5
@@ -134,14 +135,21 @@ set showcmd
 set showmode
 " Active le menu pour le menu dans la bar en bas
 set wildmenu
-set wildmode=list:longest
+"set wildmode=list:full
 
 
 set laststatus=2
 if version >= 730
   set relativenumber
   set undofile
+  set undodir=~/tmp/vim/     " undo files
 endif
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 
 let mapleader = ","
 
@@ -150,8 +158,6 @@ let mapleader = ","
 "filetype plugin indent on
 
 if has("autocmd")
-  "
-  " Voir gestion des type de fichiers dans ~/.vim/ftdetect/moa.vim
 
   " affiche les espaces en fin de ligne
   au Syntax * syn match Error /\s\+$/
