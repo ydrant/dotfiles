@@ -1,5 +1,7 @@
 #!/bin/sh
 
+git submodule update
+
 which pip > /dev/null
 if [ "$?" -ne "0" ]; then 
   sudo apt-get install curl python-setuptools 
@@ -42,4 +44,13 @@ else
   ln -s ${PWD}/zsh ~/.zsh
   ln -s ${PWD}/zsh/zshrc ~/.zshrc
 fi
+
+echo "********** FONTS **********"
+if [ -e ~/.fonts/ ]; then 
+  echo "~/.fonts already exists"
+else
+  echo "~/.zsh creating"
+  ln -s ${PWD}/deps/fonts ~/.fonts
+fi
+
 

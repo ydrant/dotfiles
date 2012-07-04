@@ -25,3 +25,6 @@
 [submodule "deps/gnome-terminal-colors-solarized"]
 	path = deps/gnome-terminal-colors-solarized
 	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+[submodule "deps/fonts/ubuntu-mono-powerline"]
+	path = deps/fonts/ubuntu-mono-powerline
+	url = git://github.com/scotu/ubuntu-mono-powerline.git
