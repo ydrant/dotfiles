@@ -134,10 +134,12 @@ set showcmd
 set showmode
 " Active le menu pour le menu dans la bar en bas
 set wildmenu
-set wildmode=list:longest
-
+"set wildmode=list:longest
+set wildignore+=*.mp3,*.zip,*.wav,*.dat,*.png,*.jpg,*.gif,rake/**,solr/**,*.yml,tmp/**,*.log
 
 set laststatus=2
+
+set pastetoggle=<F2>
 
 "if version >= 730
   set colorcolumn=80
