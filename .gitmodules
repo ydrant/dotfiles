@@ -31,3 +31,6 @@
 [submodule "deps/fonts/ubuntu-mono-powerline"]
 	path = deps/fonts/ubuntu-mono-powerline
 	url = git://github.com/scotu/ubuntu-mono-powerline.git
+[submodule "vim/bundle/vim-indent-guides"]
+	path = vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
